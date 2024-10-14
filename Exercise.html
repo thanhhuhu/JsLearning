@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #title
+    {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+    }
+    table
+    {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+        text-align: center;   
+        width: 50%;
+        height: 50%;
+        font-size: large; 
+    }
+    #container
+    {
+        display: flex;
+        justify-content: center;  /* Căn giữa theo chiều ngang */
+        align-items: center;  /* Căn giữa theo chiều dọc */
+        margin: 0;   /* Xóa margin mặc định của body */
+    }
+    td
+    {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .even
+    {
+        background-color: green;
+    }
+    .odd
+    {
+        background-color: yellow;
+    }
+    .prime
+    {
+        background-color: red;
+    }
+</style>
+<body>
+    <div id="title">
+        <h1><b>NumberGenerator</b></h1>
+        <h4><u>30DaysOfJavaScript</u></h4>
+        <h5> <u>Author:Asabeneh Yetayeh</u></h5>
+    </div>
+    <div id="container"></div>
+</body>
+<script>
+        // Function to check if a number is prime
+        function isPrime(num) {
+            if (num <= 1) return false
+            if (num === 2) return true
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false
+            }
+            return true
+        }
+
+        // Function to create a table with 10 rows and 10 columns
+        function createTable(rows, cols) {
+            const table = document.createElement('table')
+            let number = 1
+
+            for (let i = 0; i < rows; i++) {
+                const row = document.createElement('tr')
+
+                for (let j = 0; j < cols; j++) {
+                    const cell = document.createElement('td')
+                    cell.textContent = number
+
+                    // Check if the number is prime, even, or odd
+                    if (isPrime(number)) {
+                        cell.classList.add('prime')
+                    } else if (number % 2 === 0) {
+                        cell.classList.add('even')
+                    } else {
+                        cell.classList.add('odd')
+                    }
+
+                    number++
+                    row.appendChild(cell)
+                }
+                table.appendChild(row)
+            }
+
+            document.getElementById('container').appendChild(table)
+        }
+        createTable(10, 10) // Gọi hàm tạo bảng với 10 hàng và 10 cột
+
+</script>
+</html>
