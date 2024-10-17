@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Document</title>
+</head>
+<style>
+    /* #content
+    {
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    /* .dateTime
+    {
+        text-align: center;
+    } */
+    .dateTime
+    {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        width: 70%;
+        font-size: 24px;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .title
+    {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .smallTitle
+    {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    tr td 
+    {
+        font-family:'Courier New', Courier, monospace;
+        height: 50px;
+        width: 50%;
+        font-size: 20px;
+        padding:10px;   
+    }
+    th
+    {
+        font-family: 'Courier New', Courier, monospace;
+         height: 50px;
+        width: 50%;
+        font-size: 20px;
+        padding:10px;   
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px;
+        
+        border-spacing: 15px;
+    }
+    .completed 
+    {
+        background-color: green;
+        color: white; 
+    }
+    .ongoing 
+    {
+        background-color: blue;
+        color: white;
+    }
+    .coming
+    {
+        background-color: purple;
+        color: white;
+    }
+    .icon
+    {
+        text-align: center;
+    }
+    .icon1, .icon2
+    {
+        width: 2%;
+        height: 2%;
+        
+    }
+    p
+    {
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+<body>
+    <div class="allContent">
+        <h1 class="title">Thanh challenges in <span class="year">2024</span></h1>
+        <h2 class="smallTitle"> <b> <u>30 DaysOfJavaScript Challenge</u></b></h2>
+        
+        <table><tr><td><div class="dateTime" id="dateTime"></div></td></tr>
+        </table>
+        <table id="content">
+            <tr>
+                <td> <u>30DaysOfPython </u></td>
+                <td><details><summary>Python</summary> Python <br> Flutter</details> </td>
+                <td>Done</td> 
+            </tr>
+            <tr>
+                <td> <u>30DaysOfJavaScript</u> </td>
+                <td><details><summary>JavaScript</summary> Python <br> Flutter</details> </td>
+                <td>Ongoing</td> 
+            </tr>
+            <tr>
+                <td> 30DaysOfJavaScript </td>
+                <td><details><summary>HTML&CSS</summary> Python <br> Flutter</details> </td>
+                <td>Ongoing</td> 
+            </tr>            
+            <tr>
+                <td> 30DaysOfJavaScript </td>
+                <td><details><summary>React</summary> Python <br> Flutter</details> </td>
+                <td>Coming</td> 
+            </tr>           
+            <tr>
+                <td> 30DaysOfJavaScript </td>
+                <td><details><summary>Fullstack</summary> Python <br> Flutter</details> </td>
+                <td>Coming</td> 
+            </tr>            
+            <tr>
+                <td> 30DaysOfJavaScript </td>
+                <td><details><summary>Data Analysis</summary> Python <br> Flutter</details> </td>
+                <td>Coming</td> 
+            </tr>            
+            <tr>
+                <td> 30DaysOfJavaScript </td>
+                <td><details><summary>Machine Learning</summary> Python <br> Flutter</details> </td>
+                <td>Coming</td> 
+            </tr>        
+        </table>
+        <h1 style="text-align: center; font-family: 'Courier New', Courier, monospace;">Nguyen Dinh Thanh </h1>
+        <div class="icon">
+            <a href="https://www.facebook.com/profile.php?id=100024809070267" target="_blank"><img src="facebook.png" alt="" class="icon1"></a>
+            <a href="https://github.com/thanhhuhu" target="_blank"> <img src="github.png" alt="" class="icon2"></a>
+        </div>
+        <div>
+            <p>I am a student, a programmer, thank for coming my page</p>
+        </div>
+        <table>
+            <tr>
+                <th>Titles</th>
+                <th>Skills</th>
+            </tr>
+            <tr>
+                <td>Educator </td>
+                <td>Web Development</td>
+            </tr>
+            <tr>
+                <td>Programmer</td>
+                <td>Data Analysis</td>
+            </tr>
+            <tr>
+                <td>Developer</td>
+                <td>Programming</td>
+            </tr>
+            <tr>
+                <td>Motivator</td>
+                <td>Database</td>
+            </tr>
+            <tr>
+                <td>Content creator</td>
+                <td>Developing API</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    //The year color is changing every 1 second 
+    const yearElement = document.querySelector('.year')
+    const colors = ['red','green','blue','yellow']
+    yearElement.style.fontSize = '100px'
+    setInterval(()=>{
+        const randomColor = colors[Math.floor(Math.random()*colors.length)]
+        yearElement.style.color = randomColor
+    },1000)
+
+    //title
+    const title = document.querySelector('.title')
+    title.style.fontSize = '40px'
+    //content
+    const content = document.querySelector('#content')
+    content.style.marginLeft = 'auto'
+    content.style.marginRight = 'auto'
+
+    //  The date and time background color is changing every on seconds
+   const datetimeElement = document.getElementById('dateTime')
+   datetimeElement.style.textAlign = 'center'
+   datetimeElement.style.widows = '50%'
+   const backgroundColor = ['yellow','red','green']
+   function updateTime()
+   {
+        const now = new Date()
+        const formattedDateTime = now.toLocaleString()
+
+        datetimeElement.textContent = formattedDateTime
+        const randomBackgroundColor = backgroundColor[Math.floor(Math.random()*backgroundColor.length)]
+        datetimeElement.style.backgroundColor = randomBackgroundColor
+
+   }
+   setInterval(updateTime,1000)
+
+   // Completed challenge has background green 
+   function completedMarkCompleted()
+   {
+       const listItems = document.querySelectorAll('tr')
+       listItems.forEach(item => {
+           if (item.textContent.includes('Done')) {
+               item.classList.add('completed') // Thêm lớp 'completed' vào những hàng có 'Done'
+           }
+       });
+   }
+   
+   completedMarkCompleted() // Gọi hàm sau khi DOM đã tải xong
+
+   //Ongoing challenge has background yellow
+   function completedMarkOngoing()
+   {
+    const listItem1 = document.querySelectorAll('tr')
+    listItem1.forEach(item => {
+        if (item.textContent.includes('Ongoing'))
+    {
+        item.classList.add('ongoing')
+    }
+    })
+   }
+   completedMarkOngoing()
+
+   //Coming challenge has background purple
+   function completedMarkComing()
+   {
+    const listItem1 = document.querySelectorAll('tr')
+    listItem1.forEach(item => {
+        if (item.textContent.includes('Coming'))
+    {
+        item.classList.add('coming')
+    }
+    })
+   }
+   completedMarkComing()
+</script>
+</html>
